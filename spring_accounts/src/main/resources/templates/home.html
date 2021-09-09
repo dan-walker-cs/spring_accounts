@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/resources/static/styles.css">
+    <title>Home</title>
+</head>
+<body class="text-center">
+    <div th:replace="~{fragments/navigation :: navigation}"></div>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main role="main" class="inner-cover">
+            <h1 class="cover-heading pt-3">Welcome to HaveThem&trade;</h1>
+            <p class="lead pt-3">Poker for huge dumb nerds</p>
+            <p class="lead pt-5">
+                <a href="/register" class="btn btn-lg btn-primary">Register</a>
+                <a href="/login" class="btn btn-lg btn-primary">Login</a>
+            </p>
+        </main>
+    </div>
+    <div class="container fixed-bottom">
+        <hr color="CECECE">
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+</body>
+</html>

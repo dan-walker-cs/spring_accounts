@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/resources/static/styles.css">
+    <title>Dashboard</title>
+</head>
+<body class="text-center">
+    <header class = "project-header">
+        <div th:replace="~{fragments/navigation :: navigation}"></div>
+        <h1 class="mt-5">Administrator Dashboard</h1>
+    </header>
+    <section>
+        <h3 class="mt-5">This is the current system state</h3><br/>
+
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">user_id</th>
+                <th scope="col">username</th>
+                <th scope="col">password</th>
+                <th scope="col">active</th>
+                <th scope="col">roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${allUsers}">
+                <td th:text="${user.id}">user_id</td>
+                <td th:text="${user.username}">username</td>
+                <td th:text="${user.password}">password</td>
+                <td th:text="${user.active}">isActive</td>
+                <td th:text="${user.roles}">roles</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="container fixed-bottom">
+        <hr color="CECECE">
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </div>
+</body>
+</html>
