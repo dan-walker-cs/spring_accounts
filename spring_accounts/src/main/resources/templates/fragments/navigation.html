@@ -7,7 +7,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navigation">
-        <a class="navbar-brand" th:href="@{/home}">HaveThem</a>
+        <a class="navbar-brand" th:href="@{/home}">spring_accounts</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link" th:href="@{/user/${username}}">Gamble</a>
+                    <a class="nav-link" th:href="@{/user/${username}}">Account</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a class="nav-link" th:href="@{/logout}">Logout</a>
